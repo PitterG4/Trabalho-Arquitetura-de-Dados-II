@@ -26,7 +26,7 @@ Como exigido pelo trabalho, os campos de texto têm tamanho fixo completados com
 
 Em vez de criar um índice para cada registro (o que deixaria o arquivo de índice gigante), usamos um **índice parcial**. 
 
-A cada INTERVAL = 10 registros no arquivo de dados, salvamos 1 entrada no arquivo de índice contendo o deslocamento (idx) e a chave daquele bloco. 
+A cada INTERVAL = 50 registros no arquivo de dados, salvamos 1 entrada no arquivo de índice contendo o deslocamento (idx) e a chave daquele bloco. 
 
 Na hora de consultar pelo índice:
 1. O programa faz uma busca binária dentro do array de índices para achar qual bloco contém o ID que queremos.
