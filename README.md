@@ -4,10 +4,10 @@ A ideia geral do trabalho é aplicar organização sequencial-indexada em arquiv
 
 ### Como o projeto foi dividido
 
-Para facilitar e não complicar a parte em C, dividi o trabalho em duas partes:
+Para facilitar o código, ele foi dividido em duas partes:
 
-1. **Python (download.py)**: Serve só para a parte mais "chata" de lidar com o dataset original (que tem vários gigabytes). Ele baixa ou gera a amostra que você quiser, desduplica os produtos e já gera dois arquivos CSV limpos e ordenados dentro da pasta "data".
-2. **C (main.c)**: É o núcleo do trabalho de AED II. Ele lê os CSVs, monta os arquivos binários (.bin) com registros de tamanho fixo terminados em "\n" e cria os índices parciais (.idx). Todas as buscas (binária e por índice), inserções e remoções são feitas aqui, direto em disco com "fseek".
+1. **Python (download.py)**: Serve só para a parte de lidar com o dataset original (que tem vários gigabytes). Ele baixa ou gera a amostra que você quiser, desduplica os produtos e já gera dois arquivos CSV limpos e ordenados dentro da pasta "data".
+2. **C (main.c)**: É o núcleo do trabalho. Ele lê os CSVs, monta os arquivos binários (.bin) com registros de tamanho fixo terminados em "\n" e cria os índices parciais. Todas as buscas (binária e por índice), inserções e remoções são feitas aqui, direto em disco com "fseek".
 
 ---
 
@@ -52,7 +52,7 @@ O código em C só usa bibliotecas padrão, então não precisa instalar nada al
 Já no Python, se você optar por baixar o dataset oficial direto da fonte, ele usa a biblioteca kagglehub. Se não quiser instalar no seu computador, o programa faz o seguinte:
 
 - O script sempre verifica primeiro se existe uma pasta chamada "dependencies" na raiz do projeto.
-- Deixei um arquivo compactado (dependencies.rar) junto no repositório. Se você quiser rodar sem instalar absolutamente nada no seu PC, é só **extrair esse `.rar` na pasta do projeto**. O Python vai puxar tudo direto de lá.
+- Há um arquivo compactado (dependencies.rar) junto no repositório. Se você quiser rodar sem instalar absolutamente nada no seu PC, é só extrair esse .rar na pasta do projeto. O Python vai puxar tudo direto de lá.
 - Caso prefira não extrair nada, aí só precisa se certificar de ter o kagglehub instalado no seu Python (pip install kagglehub).
 
 ---
