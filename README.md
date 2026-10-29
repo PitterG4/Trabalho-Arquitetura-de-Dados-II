@@ -1,4 +1,4 @@
-# Trabalho 1 - Arquivos de Dados com Índices Parciais (AED II)
+# Arquivos de Dados com Índices Parciais (AED II)
 
 A ideia geral do trabalho é aplicar organização sequencial-indexada em arquivos binários usando dados reais de um e-commerce (retirados do Kaggle), sem carregar a base de dados inteira na memória RAM para fazer as operações.
 
